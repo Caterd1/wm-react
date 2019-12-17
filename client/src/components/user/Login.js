@@ -8,18 +8,17 @@ export default function Login(props) {
 
   let history = useHistory();
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
-    for (let user of props.users) {
-      // We found the user
-      if (user.username === username && user.password === password) {
-        // /user/:uid
-        history.push(`/user/${user._id}`);
-        return;
-      }
+    const res = await axios.get(`/api/user?username=${username}&passwords=${password}`
+    );
+    const user =res.data;
+    
+    if(user) {
+      history.push(`/user/${user._id}`);
+    } else {
+      alert("Invalid Credential");
     }
-    // we can't find user
-    alert("Invalid credential, please try it again.");
   }
 
   return (

@@ -11,20 +11,22 @@ export default function Profile(props) {
 
   const params = useParams();
 
-  useEffect(() => {
-    for (let user of props.users) {
-      if (user._id === params.uid) {
+  const getUser = async () => {
+    const res = await axios.get(`/api/user/${params.uid}`);
+    const user = res.data;
         setUsername(user.username);
         setEmail(user.email);
         setFirstName(user.firstName);
         setLastName(user.lastName);
         setPassword(user.password);
-        return;
-      }
-    }
-  }, [params.uid, props.users]);
+  };
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
 
-  const update = () => {
+  
+
+  const update = async () => {
     const newUser = {
       _id: params.uid,
       username: username,
@@ -35,7 +37,7 @@ export default function Profile(props) {
     };
 
     // update user in users
-    props.updateUser(newUser);
+    await axios.put("/api/user", newUser);
 
     alert("user info is updated!");
   };

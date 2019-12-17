@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import uuid from "uuid";
-
 export default function PageNew(props) {
   const history = useHistory();
   const params = useParams();

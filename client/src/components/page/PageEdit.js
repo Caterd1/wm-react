@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-import axios from "axios";
-
 export default function PageEdit(props) {
   const history = useHistory();
   const params = useParams();

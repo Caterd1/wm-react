@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js","build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/Caterd1/Webmaker-react#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "node": "^13.3.0"
+    "node": "^13.3.0",
+    "nodemon": "^2.0.2"
   }
 }

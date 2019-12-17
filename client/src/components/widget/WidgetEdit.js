@@ -3,8 +3,6 @@ import { useParams, useHistory } from "react-router-dom";
 import WidgetHeading from "./WidgetHeading";
 import WidgetImage from "./WidgetImage";
 import WidgetYouTube from "./WidgetYouTube";
-import axios from "axios";
-
 export default function WidgetEdit(props) {
   const params = useParams();
   const history = useHistory();
