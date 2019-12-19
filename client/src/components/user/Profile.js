@@ -20,9 +20,11 @@ export default function Profile(props) {
         setLastName(user.lastName);
         setPassword(user.password);
   };
+  
   useEffect(() => {
     getUser();
-  }, [getUser]);
+    //eslint-disable-next-line
+  }, []);
 
   
 

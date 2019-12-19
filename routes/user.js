@@ -88,7 +88,7 @@ router.get("/:id", (req, res) => {
 
 
 // update user
-router.push("/", (req, res) => {
+router.put("/", (req, res) => {
   const newUser = req.body;
   for(let i=0;i<users.length;i++) {
       if(users[i]._id === newUser._id) {
