@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios"; 
+
 export default function WidgetList(props) {
   const params = useParams();
 
   const [widgets, setWidgets] = useState([]);
 
   useEffect(() => {
-    setWidgets(props.getWidgets(params.pid));
-  }, [props, params.pid]);
+    getWidgets();
+    // eslint-disable-next-line
+  }, []);
+
+  const getWidgets = async () => {
+    const res = await axios.get(`/api/widgets/page/${params.pid}`);
+  setWidgets(res.data);
+  };
 
   return (
     <div>

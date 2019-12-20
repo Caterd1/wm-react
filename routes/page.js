@@ -18,7 +18,7 @@ res.json(newPage);
 router.get("/website/:wid", (req, res) => {
 const wid = req.params.wid;
 const currentPages = [];
-for(let i=0;i<pages.length; i++) {
+for (let i = 0; i <pages.length; i++) {
     if(pages[i].websiteId === wid) {
         currentPages.push(pages[i]);
     }
