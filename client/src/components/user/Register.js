@@ -25,7 +25,6 @@ export default function Register(props) {
     }
     // Add new user into users
     const newUser = {
-      _id: uuid.v4(),
       username: username,
       password: password,
       firstName: "",
