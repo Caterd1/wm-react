@@ -13,7 +13,7 @@ export default function WidgetList(props) {
   }, []);
 
   const getWidgets = async () => {
-    const res = await axios.get(`/api/widgets/page/${params.pid}`);
+    const res = await axios.get(`/api/widget/page/${params.pid}`);
   setWidgets(res.data);
   };
 
