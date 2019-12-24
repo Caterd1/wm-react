@@ -46,10 +46,10 @@ router.put("/", async (req, res) => {
 });
 
 // Delete website
-router.delete("/:wid" , async (req, res) => {
+router.delete("/:wid", async (req, res) => {
     const wid = req.params.wid;
     await Website.findByIdAndRemove(wid);
-    res.json(websites);
+    res.json(null);
 });
 
 module.exports = router;

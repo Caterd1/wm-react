@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-import uuid from "uuid";
-import Axios from "axios";
+import axios from "axios";
 
 export default function PageNew(props) {
   const history = useHistory();
@@ -13,12 +12,11 @@ export default function PageNew(props) {
   const submit = async e => {
     e.preventDefault();
     const newPage = {
-      _id: uuid.v4(),
       name: name,
       title: title,
       websiteId: params.wid
     };
-    await Axios.post("/api/page", newPage); 
+    await axios.post("/api/page", newPage); 
     history.push(`/user/${params.uid}/website/${params.wid}/page`);
   };
 
